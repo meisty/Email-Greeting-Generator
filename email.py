@@ -1,16 +1,19 @@
 import pyperclip
 from datetime import datetime as dt
 import time
+import os
 
+#Function to get the recipients name
 def Getname():
     name=input("Please enter the name:  ")
     return name
 
+#Generate the menu which the user can make their selection from
 def Generate_menu():
     print("-" * 38)
     print("\n")
     print("   Email Generator Tool version 1.0")
-    print("   Author: Shaun Dixon\n   Released: 25/01/2017")
+    print("   Author: Shaun Dixon\n   Released: 16/05/2017")
     print("\n")
     print("-" * 38)
     print("1.   First contact general email")
@@ -21,10 +24,12 @@ def Generate_menu():
     print("-" * 38)
     print("\n \n")
 
+#Determine the subject of the email
 def get_subject():
     subject=input("Please enter the subject you are followng up on:  ")
     return subject
 
+#Generate greeting to either "good morning" or "good afternoon" depending on the system time
 def greeting():
     date = dt.now()
     if date.hour < 12:
@@ -32,6 +37,7 @@ def greeting():
     else:
         return "Good afternoon "
 
+#Function which determines the text copied to the clipboard
 def Choice():
     c = input("Please select one of the above options to proceed:  ")
     if c == '1':
@@ -46,7 +52,10 @@ def Choice():
         pyperclip.copy(greeting() + Getname() + ",\n \nI am following up on the email I sent you regarding your issue to do with " + get_subject() + ".\n\nI hope that this has resolved your issue, if however it has not please contact me and I will reopen the call and investigate further.")
 
 
-Generate_menu()
-Choice()
-# print("Your email greeting has been copied to your clipboard.\nThis Window will now close")
-# time.sleep(4)
+
+while True:
+    Generate_menu()
+    Choice()
+    print("\n\n\nYour email greeting has been copied to your clipboard.")
+    time.sleep(4)
+    os.system('clear')
