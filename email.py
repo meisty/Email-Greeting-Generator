@@ -12,7 +12,7 @@ def Getname():
 def Generate_menu():
     print("-" * 38)
     print("\n")
-    print("   Email Generator Tool version 1.0")
+    print("   Email Generator Tool version 1.1")
     print("   Author: Shaun Dixon\n   Released: 16/05/2017")
     print("\n")
     print("-" * 38)
