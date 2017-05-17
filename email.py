@@ -21,6 +21,7 @@ def Generate_menu():
     print("3.   Follow up email")
     print("4.   Follow up email close in 5 days")
     print("5.   Follow up email - Potential first time resolution")
+    print("6.   Exit program")
     print("-" * 38)
     print("\n \n")
 
@@ -41,21 +42,39 @@ def greeting():
 def Choice():
     c = input("Please select one of the above options to proceed:  ")
     if c == '1':
-        pyperclip.copy(greeting() + Getname() + ",\n \nThank you for your patience while I have been looking into this further for you.")
+        pyperclip.copy(greeting() + Getname() + ",\n \nThank you for your patience while I have been looking into this further for you." + footer())
     elif c == '2':
-        pyperclip.copy(greeting() + Getname() + ",\n \nFirstly let me apologise for the delay in contacting you, we are currently experiencing a high volume of calls however I hope to assist you with a resolution as quickly as possible.")
+        pyperclip.copy(greeting() + Getname() + ",\n \nFirstly let me apologise for the delay in contacting you, we are currently experiencing a high volume of calls however I hope to assist you with a resolution as quickly as possible." + footer())
     elif c== '3':
-        pyperclip.copy(greeting() + Getname() + ",\n \nI am following up on the email I sent you regarding your issue to do with " + get_subject() + ".")
+        pyperclip.copy(greeting() + Getname() + ",\n \nI am following up on the email I sent you regarding your issue to do with " + get_subject() + "." + footer())
     elif c== '4':
-        pyperclip.copy(greeting() + Getname() + ",\n \nI am following up on the email I sent you regarding your issue to do with " + get_subject() + ".")
+        pyperclip.copy(greeting() + Getname() + ",\n \nI am following up on the email I sent you regarding your issue to do with " + get_subject() + "." + footer())
     elif c== '5':
-        pyperclip.copy(greeting() + Getname() + ",\n \nI am following up on the email I sent you regarding your issue to do with " + get_subject() + ".\n\nI hope that this has resolved your issue, if however it has not please contact me and I will reopen the call and investigate further.")
+        pyperclip.copy(greeting() + Getname() + ",\n \nI am following up on the email I sent you regarding your issue to do with " + get_subject() + "." + footer())
+    elif c== '6':
+        c = 'y'
+    else:
+        c = 'error'
+    return c
+
+#function which generates the menu, gets user choice and then either exits the program or performs required action
+def generate_email_header():
+    exit = 'n'
+    while True:
+        Generate_menu()
+        choice = Choice()
+        if choice == 'y':
+            break
+        elif choice == 'error':
+            print("\n\n\nSorry I did not recognise your input.  Please select one of the above options.")
+            time.sleep(4)
+        else:
+            print("\n\n\nYour email greeting has been copied to your clipboard.")
+            time.sleep(4)
+            os.system('clear')
+
+def footer():
+    return '\n\n\n\nI hope that this has resolved your issue, if however it has not please contact me and I will reopen the call and investigate further.'
 
 
-
-while True:
-    Generate_menu()
-    Choice()
-    print("\n\n\nYour email greeting has been copied to your clipboard.")
-    time.sleep(4)
-    os.system('clear')
+generate_email_header()
