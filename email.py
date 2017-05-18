@@ -42,13 +42,13 @@ def greeting():
 def Choice():
     c = input("Please select one of the above options to proceed:  ")
     if c == '1':
-        pyperclip.copy(greeting() + Getname() + ",\n \nThank you for your patience while I have been looking into this further for you." + footer())
+        pyperclip.copy(greeting() + Getname() + ",\n \nThank you for your patience while I have been looking into this further for you.")
     elif c == '2':
-        pyperclip.copy(greeting() + Getname() + ",\n \nFirstly let me apologise for the delay in contacting you, we are currently experiencing a high volume of calls however I hope to assist you with a resolution as quickly as possible." + footer())
+        pyperclip.copy(greeting() + Getname() + ",\n \nFirstly let me apologise for the delay in contacting you, we are currently experiencing a high volume of calls however I hope to assist you with a resolution as quickly as possible.")
     elif c== '3':
-        pyperclip.copy(greeting() + Getname() + ",\n \nI am following up on the email I sent you regarding your issue to do with " + get_subject() + "." + footer())
+        pyperclip.copy(greeting() + Getname() + ",\n \nI am following up on the email I sent you regarding your issue to do with " + get_subject() + ".")
     elif c== '4':
-        pyperclip.copy(greeting() + Getname() + ",\n \nI am following up on the email I sent you regarding your issue to do with " + get_subject() + "." + footer())
+        pyperclip.copy(greeting() + Getname() + ",\n \nI am following up on the email I sent you regarding your issue to do with " + get_subject() + "." + "\n\n\n\nIf I don't hear back from you within 7 days I will asumme this issue has been resolved and will close this case")
     elif c== '5':
         pyperclip.copy(greeting() + Getname() + ",\n \nI am following up on the email I sent you regarding your issue to do with " + get_subject() + "." + footer())
     elif c== '6':
