@@ -48,7 +48,7 @@ def Choice():
     elif c== '3':
         pyperclip.copy(greeting() + Getname() + ",\n \nI am following up on the email I sent you regarding your issue to do with " + get_subject() + ".")
     elif c== '4':
-        pyperclip.copy(greeting() + Getname() + ",\n \nI am following up on the email I sent you regarding your issue to do with " + get_subject() + "." + "\n\n\n\nIf I don't hear back from you within 7 days I will asumme this issue has been resolved and will close this case")
+        pyperclip.copy(greeting() + Getname() + ",\n \nI am following up on the email I sent you regarding your issue to do with " + get_subject() + "." + "\n\n\n\nIf I don't hear back from you within 7 days I will assume this issue has been resolved and will close this case.")
     elif c== '5':
         pyperclip.copy(greeting() + Getname() + ",\n \nI am following up on the email I sent you regarding your issue to do with " + get_subject() + "." + footer())
     elif c== '6':
