@@ -66,8 +66,8 @@ def generate_email_header():
         if choice == 'y':
             break
         elif choice == 'error':
-            print("\n\n\nSorry I did not recognise your input.  Please select one of the above options.")
-            time.sleep(4)
+            print("\n\n\nSorry I did not recognise your input.")
+            time.sleep(2)
         else:
             print("\n\n\nYour email greeting has been copied to your clipboard.")
             time.sleep(4)
